@@ -133,4 +133,7 @@ unset __conda_setup
 ### aliases 
 alias sl="ls"
 alias mv="mv -i"
+alias v="v"
+alias gs="git status"
+alias gl="git log --all --graph --decorate --oneline"
 
