@@ -133,7 +133,11 @@ unset __conda_setup
 ### aliases 
 alias sl="ls"
 alias mv="mv -i"
-alias v="v"
+alias mkdir="mkdir -p"
+alias df="df -h"
+alias v="vim"
 alias gs="git status"
 alias gl="git log --all --graph --decorate --oneline"
-
+alias dreset="sudo systemctl restart docker"
+alias di="sudo docker images"
+alias dr="sudo docker run --gpus all -it -v: ~/container_data:data "
