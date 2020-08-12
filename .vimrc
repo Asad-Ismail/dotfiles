@@ -28,6 +28,7 @@ Bundle 'tomtom/tcomment_vim'
 Plugin 'scrooloose/nerdtree'
 " exuberant-ctags: manage ctags content
 Plugin 'jakedouglas/exuberant-ctags'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
 filetype plugin indent on
