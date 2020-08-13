@@ -5,6 +5,8 @@
 set nocompatible              " required
 filetype off                  " required
 
+execute pathogen#infect()
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -26,15 +28,13 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'tomtom/tcomment_vim'
 " nerdtree: sidebar to search filesystem
 Plugin 'scrooloose/nerdtree'
-" exuberant-ctags: manage ctags content
-Plugin 'jakedouglas/exuberant-ctags'
+" Color schemes
 Plugin 'flazz/vim-colorschemes'
 
-call vundle#end()
 filetype plugin indent on
 
 """ Configuration: YouCompleteMe
-let g:ycm_python_binary_path='/usr/bin/python3'
+" let g:ycm_python_binary_path='/usr/bin/python3'
 let g:ycm_autoclose_preview_window_after_completion=1
 " Go to the declaration/definition of a func using '-g'
 let mapleader = "-"
@@ -456,3 +456,20 @@ if filereadable($LOCALFILE)
 endif
 inoremap jk <esc>
 inoremap kj <esc>
+
+" syntastic static checking settings
+let g:syntastic_python_checkers = ['pylint']
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_mode_map = {
+       \'mode': 'active',
+       \ 'active_filetypes': ['ruby', 'php', 'lua', 'python', 'sh', 'zsh', 'cpp'],
+       \ 'passive_filetypes': [] }
